@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import './confirm.css';
+import '../styles/confirm.css';
 
 const ConfirmationPage = () => {
   const location = useLocation();
@@ -23,7 +23,6 @@ const ConfirmationPage = () => {
     yearLevel,
     year,
     strand,
-    section,
     department,
     type,
   } = participant;
@@ -54,7 +53,6 @@ const ConfirmationPage = () => {
 
           {/* SHS-specific */}
           {strand && <p><strong>Strand:</strong> {strand}</p>}
-          {section && <p><strong>Section:</strong> {section}</p>}
           {year && <p><strong>Year Level:</strong> {year}</p>}
 
           {/* Teacher-specific */}

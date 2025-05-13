@@ -23,6 +23,7 @@ export const registerCollege = async (req, res) => {
 
 export const registerSHS = async (req, res) => {
   try {
+    
     const { idNumber, firstName, middleInitial, lastName, strand, year } = req.body;
     const fullName = `${firstName} ${middleInitial}. ${lastName}`;
 
@@ -94,31 +95,47 @@ export const getParticipantById = async (req, res) => {
 
 
 
-// Get all participants (college, shs, teacher)
+
 export const getAllParticipants = async (req, res) => {
-  const college = await College.find();
-  const shs = await SHS.find();
-  const teacher = await Teacher.find();
-  res.json({ college, shs, teacher });
+  const college = (await College.find()).map(p => ({
+    ...p.toObject(),
+    fullName: `${p.firstName} ${p.middleInitial}. ${p.lastName}`,
+    type: 'College'
+  }));
+
+  const shs = (await SHS.find()).map(p => ({
+    ...p.toObject(),
+    fullName: `${p.firstName} ${p.middleInitial}. ${p.lastName}`,
+    type: 'SHS'
+  }));
+
+  const teacher = (await Teacher.find()).map(p => ({
+    ...p.toObject(),
+    fullName: `${p.firstName} ${p.middleInitial}. ${p.lastName}`,
+    type: 'Teacher'
+  }));
+
+  res.json([...college, ...shs, ...teacher]); // Return a flat array
 };
 
-// Update participant by ID and type
-export const updateParticipant = async (req, res) => {
-  const { id, type } = req.params;
-  let model;
 
-  if (type === 'college') model = College;
-  else if (type === 'shs') model = SHS;
-  else if (type === 'teacher') model = Teacher;
-  else return res.status(400).json({ error: 'Invalid participant type' });
 
-  const updated = await model.findByIdAndUpdate(id, req.body, { new: true });
-  if (!updated) return res.status(404).json({ error: 'Participant not found' });
+// export const updateParticipant = async (req, res) => {
+//   const { id, type } = req.params;
+//   let model;
 
-  res.json(updated);
-};
+//   if (type === 'college') model = College;
+//   else if (type === 'shs') model = SHS;
+//   else if (type === 'teacher') model = Teacher;
+//   else return res.status(400).json({ error: 'Invalid participant type' });
 
-// Delete participant
+//   const updated = await model.findByIdAndUpdate(id, req.body, { new: true });
+//   if (!updated) return res.status(404).json({ error: 'Participant not found' });
+
+//   res.json(updated);
+// };
+
+
 export const deleteParticipant = async (req, res) => {
   const { id, type } = req.params;
   let model;

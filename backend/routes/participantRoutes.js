@@ -7,7 +7,7 @@ import { registerCollege,
          getTeachers, 
          getAllParticipants,
          getParticipantById,
-         updateParticipant,
+        //  updateParticipant,
          deleteParticipant } from '../controllers/participantControllers.js';
 
 const router = express.Router();

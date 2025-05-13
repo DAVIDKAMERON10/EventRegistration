@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 const CollegeSchema = new mongoose.Schema({
-  idNumber: String,
+  idNumber: Number,
   firstName: String,
   middleInitial: String,
   lastName: String,
   program: String,
-  yearLevel: String,
+  yearLevel: Number,
   qrCode: String
 });
 

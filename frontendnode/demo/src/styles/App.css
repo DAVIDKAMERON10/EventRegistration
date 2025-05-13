@@ -1,0 +1,204 @@
+/* UC Event Registration Form - Enhanced Design */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #7db6f0, #5a8ec9);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 450px;
+  margin: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-wrapper {
+  width: 100%;
+}
+
+.registration-container {
+  text-align: center;
+  padding: 0;
+}
+
+h2 {
+  color: #000000;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+}
+
+.category-select, 
+form input {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #94bff7;
+  border-radius: 8px;
+  font-size: 15px;
+   color: #020407;
+  background-color: rgb(240, 180, 180);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-size:medium;
+}
+
+.category-select:focus, 
+form input:focus {
+  outline: none;
+  border-color: #99c8e7;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: #70a4f3;
+
+}
+
+.category-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.button-group button {
+  padding: 12px 25px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: rgb(17, 8, 8);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-group button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #2c3e50;
+  color: rgb(250, 248, 248);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #4b3434;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+    margin: 15px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .button-group button {
+    width: 100%;
+  }
+}
+
+/* Form Labels */
+form {
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+/* Section Titles */
+h3 {
+  color: #3498db;
+  margin: 25px 0 15px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.forms {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #181e24;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  
+}
+
+.forms input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  background-color: #ddd2d2;
+}
+
+.forms label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #020407;
+  font-size: 14px;
+}
+
+.forms button:hover {
+  background-color: #1a252f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}

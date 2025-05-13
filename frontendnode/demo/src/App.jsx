@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CollegeForm from './components/CollegeForm';
 import SHSForm from './components/SHSForm';
 import TeacherForm from './components/TeacherForm';
-import './App.css';
+import './styles/App.css';
 
 const App = () => {
   const [selectedType, setSelectedType] = useState('');
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="app-wrapper">
       <div className="registration-container">
-        <h2>Exhibition Event Registration</h2>
+        <h2>UC Event Registration</h2>
         <select
           className="category-select"
           value={selectedType}

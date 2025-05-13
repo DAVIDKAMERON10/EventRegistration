@@ -6,7 +6,7 @@ const SHSSchema = new mongoose.Schema({
   middleInitial: String,
   lastName: String,
   strand: String,
-  year: String,
+  year: Number,
   qrCode: String
 });
 
